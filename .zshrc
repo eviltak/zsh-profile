@@ -67,6 +67,7 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  cargo-completions
   zsh-syntax-highlighting
 )
 
@@ -98,6 +99,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 autoload bashcompinit && bashcompinit
 eval "$(_PLATFORMIO_COMPLETE=source platformio)"
 eval "$(_PIO_COMPLETE=source pio)"
+
+setopt extendedglob
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

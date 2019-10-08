@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH="/home/arav/.cargo/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

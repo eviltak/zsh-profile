@@ -8,10 +8,19 @@ export ZSH="/home/arav/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery time)
+
+POWERLEVEL9K_BATTERY_STAGES="▁▂▃▄▅▆▇█"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,9 +76,14 @@ POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  cargo-completions
+  zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-completions
 )
+
+
+fpath=(~/.zsh/completions $fpath) 
+fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,11 +108,6 @@ fi
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
-
-# PlatformIO completion
-autoload bashcompinit && bashcompinit
-eval "$(_PLATFORMIO_COMPLETE=source platformio)"
-eval "$(_PIO_COMPLETE=source pio)"
 
 setopt extendedglob
 

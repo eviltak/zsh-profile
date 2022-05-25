@@ -42,6 +42,7 @@ bindkey '^H' backward-kill-word
 bindkey "\e[3;6~" kill-line
 
 EDITOR=gedit
+alias ls='ls --color=auto'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

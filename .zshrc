@@ -8,7 +8,7 @@ fi
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'r:|[._-]=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'r:|[._-]=* r:|=*'
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit

@@ -19,6 +19,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+setopt inc_append_history_time
 setopt extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install

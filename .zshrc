@@ -8,14 +8,18 @@ fi
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 fpath+=~/.zfunc
+
+ZSHRC_DIR=$(dirname $(readlink -f "${(%):-%x}"))
+source "$ZSHRC_DIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'r:|[._-]=* r:|=*'
 zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

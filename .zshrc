@@ -35,12 +35,26 @@ source $HOME/antigen.zsh
 antigen init $HOME/.antigenrc
 
 # Cycle through history based on characters already typed on the line
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
-bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+# autoload -U up-line-or-beginning-search
+# autoload -U down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
+# bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+
+### zsh-autocomplete
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+# all Tab widgets
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+
+# all history widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+
+# ^S
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+### End zsh-autocomplete
 
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word

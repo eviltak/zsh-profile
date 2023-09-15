@@ -46,14 +46,8 @@ antigen init $HOME/.antigenrc
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
-# all Tab widgets
-zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-
-# all history widgets
-zstyle ':autocomplete:*history*:*' insert-unambiguous yes
-
-# ^S
-zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+# all widgets
+zstyle ':autocomplete:*' insert-unambiguous yes
 ### End zsh-autocomplete
 
 bindkey "\e[1;5C" forward-word
